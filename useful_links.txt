@@ -1,0 +1,2 @@
+syscall services: http://courses.missouristate.edu/kenvollmar/mars/help/syscallhelp.html
+operations: http://www.mrc.uidaho.edu/mrc/people/jff/digital/MIPSir.html
