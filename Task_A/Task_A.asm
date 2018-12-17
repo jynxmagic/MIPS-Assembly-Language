@@ -16,12 +16,12 @@ syscall
 
 #Store name input
 li $v0, 8
-
-add $a1, $a1, $a0
-
-##Probably could do some validation here (no numbers) ####
-
+li $a1, 35 #allocate space for input (35 bytes - 35 Chars)
 syscall
+
+move $t1, $a0
+
+##Probably could do some verification here (no numbers in name input) ####
 
 #Display prompt pin
 la $a0, prompt_pin
@@ -32,7 +32,7 @@ syscall
 li $v0, 5
 syscall
 
-add $a2, $a2, $v0
+move $t2, $v0
 
 #Output output
 la $a0, output
@@ -40,7 +40,7 @@ li $v0, 4
 syscall
 
 #Output stored name
-la $a0, ($a1)
+move $a0, $t1
 li $v0, 4
 syscall
 
@@ -50,7 +50,7 @@ li $v0, 4
 syscall
 
 #Output stored pin
-la $a0, ($a2)
+move $a0, $t2
 li $v0, 1
 syscall
 
