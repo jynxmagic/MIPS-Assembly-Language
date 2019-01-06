@@ -4,8 +4,7 @@ result: .asciiz "Result of division by 3.3: "
 divisor: .float 3.3
 
 .text
-################## START ######################################
-main:
+## User input ##
 #output text to screen
 la $a0, prompt
 li $v0, 4
@@ -17,9 +16,7 @@ syscall
 
 
 
-####################### DIVIDE!!! #####################################
-
-divide:
+## Division ##
 l.s $f2, divisor
 
 #divide by 3.3 in co processor
@@ -27,7 +24,7 @@ div.s $f12, $f0, $f2
 
 
 
-####################### OUTPUT RESULT #################################
+## Output ##
 #output result string
 la $a0, result
 li $v0, 4
